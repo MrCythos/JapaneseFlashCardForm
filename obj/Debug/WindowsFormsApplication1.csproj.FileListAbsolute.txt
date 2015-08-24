@@ -7,3 +7,12 @@ c:\users\howard\documents\visual studio 2013\Projects\WindowsFormsApplication1\W
 c:\users\howard\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 c:\users\howard\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 c:\users\howard\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Howard Kim\Documents\Visual Studio 2013\Projects\JapaneseFlashCardForm\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Howard Kim\Documents\Visual Studio 2013\Projects\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Howard Kim\Documents\Visual Studio 2013\Projects\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Howard Kim\Documents\Visual Studio 2013\Projects\JapaneseFlashCardForm\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Howard Kim\Documents\Visual Studio 2013\Projects\JapaneseFlashCardForm\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Howard Kim\Documents\Visual Studio 2013\Projects\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Howard Kim\Documents\Visual Studio 2013\Projects\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Howard Kim\Documents\Visual Studio 2013\Projects\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Howard Kim\Documents\Visual Studio 2013\Projects\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache

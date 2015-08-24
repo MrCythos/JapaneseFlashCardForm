@@ -34,7 +34,9 @@
 め,メ,ME,false
 も,モ,MO,false
 や,ヤ,YA,false
+ , , ,false
 ゆ,ユ,YU,false
+ , , ,false
 よ,ヨ,YO,false
 ら,ラ,RA,false
 り,リ,RI,false
@@ -42,7 +44,8 @@
 れ,レ,RE,false
 ろ,ロ,RO,false
 わ,ワ,WA,false
-ゐ,ヰ,WI,false
-ゑ,ヱ,WE,false
+ , , ,false
+ , , ,false
+ , , ,false
 を,ヲ,WO,false
 ん, ,N,false

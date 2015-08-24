@@ -49,19 +49,13 @@
             this.symbologyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hiraganaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toKatakanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromKatakanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toRomajiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromRomajiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.katakanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toHiraganaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromHiraganaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toRomajiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromRomajiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.romajiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toHiraganaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromHiraganaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toKatakanaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromKatakanaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.fontsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectionWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randomizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +70,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,6 +84,7 @@
             this.checkBox1.TabIndex = 37;
             this.checkBox1.Text = "Vowel Base";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
             // checkBox2
             // 
@@ -100,6 +96,7 @@
             this.checkBox2.TabIndex = 38;
             this.checkBox2.Text = "K-Line";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -111,6 +108,7 @@
             this.checkBox3.TabIndex = 40;
             this.checkBox3.Text = "S-Line";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // checkBox4
             // 
@@ -122,6 +120,7 @@
             this.checkBox4.TabIndex = 39;
             this.checkBox4.Text = "T-Line";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // checkBox5
             // 
@@ -133,6 +132,7 @@
             this.checkBox5.TabIndex = 44;
             this.checkBox5.Text = "N-Line";
             this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
             // checkBox6
             // 
@@ -144,6 +144,7 @@
             this.checkBox6.TabIndex = 43;
             this.checkBox6.Text = "H-Line";
             this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // checkBox7
             // 
@@ -155,6 +156,7 @@
             this.checkBox7.TabIndex = 42;
             this.checkBox7.Text = "M-Line";
             this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
             // 
             // checkBox8
             // 
@@ -166,6 +168,7 @@
             this.checkBox8.TabIndex = 41;
             this.checkBox8.Text = "Y-Line";
             this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
             // 
             // checkBox9
             // 
@@ -177,6 +180,7 @@
             this.checkBox9.TabIndex = 45;
             this.checkBox9.Text = "R-Line";
             this.checkBox9.UseVisualStyleBackColor = true;
+            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
             // 
             // checkBox10
             // 
@@ -188,6 +192,7 @@
             this.checkBox10.TabIndex = 46;
             this.checkBox10.Text = "W-Line";
             this.checkBox10.UseVisualStyleBackColor = true;
+            this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox10_CheckedChanged);
             // 
             // checkBox11
             // 
@@ -199,6 +204,7 @@
             this.checkBox11.TabIndex = 47;
             this.checkBox11.Text = "n";
             this.checkBox11.UseVisualStyleBackColor = true;
+            this.checkBox11.CheckedChanged += new System.EventHandler(this.checkBox11_CheckedChanged);
             // 
             // checkBox12
             // 
@@ -210,6 +216,7 @@
             this.checkBox12.TabIndex = 48;
             this.checkBox12.Text = "A-Base";
             this.checkBox12.UseVisualStyleBackColor = true;
+            this.checkBox12.CheckedChanged += new System.EventHandler(this.checkBox12_CheckedChanged);
             // 
             // checkBox13
             // 
@@ -221,6 +228,7 @@
             this.checkBox13.TabIndex = 49;
             this.checkBox13.Text = "I-Base";
             this.checkBox13.UseVisualStyleBackColor = true;
+            this.checkBox13.CheckedChanged += new System.EventHandler(this.checkBox13_CheckedChanged);
             // 
             // checkBox14
             // 
@@ -232,6 +240,7 @@
             this.checkBox14.TabIndex = 50;
             this.checkBox14.Text = "U-Base";
             this.checkBox14.UseVisualStyleBackColor = true;
+            this.checkBox14.CheckedChanged += new System.EventHandler(this.checkBox14_CheckedChanged);
             // 
             // checkBox15
             // 
@@ -243,6 +252,7 @@
             this.checkBox15.TabIndex = 51;
             this.checkBox15.Text = "E-Base";
             this.checkBox15.UseVisualStyleBackColor = true;
+            this.checkBox15.CheckedChanged += new System.EventHandler(this.checkBox15_CheckedChanged);
             // 
             // checkBox16
             // 
@@ -254,6 +264,7 @@
             this.checkBox16.TabIndex = 52;
             this.checkBox16.Text = "O-Base";
             this.checkBox16.UseVisualStyleBackColor = true;
+            this.checkBox16.CheckedChanged += new System.EventHandler(this.checkBox16_CheckedChanged);
             // 
             // menuStrip1
             // 
@@ -285,9 +296,7 @@
             // 
             this.hiraganaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toKatakanaToolStripMenuItem,
-            this.fromKatakanaToolStripMenuItem,
-            this.toRomajiToolStripMenuItem,
-            this.fromRomajiToolStripMenuItem});
+            this.toRomajiToolStripMenuItem});
             this.hiraganaToolStripMenuItem.Name = "hiraganaToolStripMenuItem";
             this.hiraganaToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.hiraganaToolStripMenuItem.Text = "HIragana";
@@ -295,34 +304,20 @@
             // toKatakanaToolStripMenuItem
             // 
             this.toKatakanaToolStripMenuItem.Name = "toKatakanaToolStripMenuItem";
-            this.toKatakanaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.toKatakanaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.toKatakanaToolStripMenuItem.Text = "to Katakana";
-            // 
-            // fromKatakanaToolStripMenuItem
-            // 
-            this.fromKatakanaToolStripMenuItem.Name = "fromKatakanaToolStripMenuItem";
-            this.fromKatakanaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.fromKatakanaToolStripMenuItem.Text = "from Katakana";
             // 
             // toRomajiToolStripMenuItem
             // 
             this.toRomajiToolStripMenuItem.Name = "toRomajiToolStripMenuItem";
-            this.toRomajiToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.toRomajiToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.toRomajiToolStripMenuItem.Text = "to Romaji";
-            // 
-            // fromRomajiToolStripMenuItem
-            // 
-            this.fromRomajiToolStripMenuItem.Name = "fromRomajiToolStripMenuItem";
-            this.fromRomajiToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.fromRomajiToolStripMenuItem.Text = "from Romaji";
             // 
             // katakanaToolStripMenuItem
             // 
             this.katakanaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toHiraganaToolStripMenuItem,
-            this.fromHiraganaToolStripMenuItem,
-            this.toRomajiToolStripMenuItem1,
-            this.fromRomajiToolStripMenuItem1});
+            this.toRomajiToolStripMenuItem1});
             this.katakanaToolStripMenuItem.Name = "katakanaToolStripMenuItem";
             this.katakanaToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.katakanaToolStripMenuItem.Text = "Katakana";
@@ -330,34 +325,20 @@
             // toHiraganaToolStripMenuItem
             // 
             this.toHiraganaToolStripMenuItem.Name = "toHiraganaToolStripMenuItem";
-            this.toHiraganaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.toHiraganaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.toHiraganaToolStripMenuItem.Text = "to Hiragana";
-            // 
-            // fromHiraganaToolStripMenuItem
-            // 
-            this.fromHiraganaToolStripMenuItem.Name = "fromHiraganaToolStripMenuItem";
-            this.fromHiraganaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.fromHiraganaToolStripMenuItem.Text = "from Hiragana";
             // 
             // toRomajiToolStripMenuItem1
             // 
             this.toRomajiToolStripMenuItem1.Name = "toRomajiToolStripMenuItem1";
-            this.toRomajiToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.toRomajiToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
             this.toRomajiToolStripMenuItem1.Text = "to Romaji";
-            // 
-            // fromRomajiToolStripMenuItem1
-            // 
-            this.fromRomajiToolStripMenuItem1.Name = "fromRomajiToolStripMenuItem1";
-            this.fromRomajiToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
-            this.fromRomajiToolStripMenuItem1.Text = "from Romaji";
             // 
             // romajiToolStripMenuItem
             // 
             this.romajiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toHiraganaToolStripMenuItem1,
-            this.fromHiraganaToolStripMenuItem1,
-            this.toKatakanaToolStripMenuItem1,
-            this.fromKatakanaToolStripMenuItem1});
+            this.toKatakanaToolStripMenuItem1});
             this.romajiToolStripMenuItem.Name = "romajiToolStripMenuItem";
             this.romajiToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.romajiToolStripMenuItem.Text = "Romaji";
@@ -365,26 +346,14 @@
             // toHiraganaToolStripMenuItem1
             // 
             this.toHiraganaToolStripMenuItem1.Name = "toHiraganaToolStripMenuItem1";
-            this.toHiraganaToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.toHiraganaToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
             this.toHiraganaToolStripMenuItem1.Text = "to Hiragana";
-            // 
-            // fromHiraganaToolStripMenuItem1
-            // 
-            this.fromHiraganaToolStripMenuItem1.Name = "fromHiraganaToolStripMenuItem1";
-            this.fromHiraganaToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
-            this.fromHiraganaToolStripMenuItem1.Text = "from Hiragana";
             // 
             // toKatakanaToolStripMenuItem1
             // 
             this.toKatakanaToolStripMenuItem1.Name = "toKatakanaToolStripMenuItem1";
-            this.toKatakanaToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.toKatakanaToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
             this.toKatakanaToolStripMenuItem1.Text = "to Katakana";
-            // 
-            // fromKatakanaToolStripMenuItem1
-            // 
-            this.fromKatakanaToolStripMenuItem1.Name = "fromKatakanaToolStripMenuItem1";
-            this.fromKatakanaToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
-            this.fromKatakanaToolStripMenuItem1.Text = "from Katakana";
             // 
             // fontsToolStripMenuItem
             // 
@@ -438,7 +407,7 @@
             // creditsToolStripMenuItem
             // 
             this.creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
-            this.creditsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.creditsToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.creditsToolStripMenuItem.Text = "Credits";
             this.creditsToolStripMenuItem.Click += new System.EventHandler(this.creditsToolStripMenuItem_Click_1);
             // 
@@ -504,11 +473,20 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(487, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 60;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 777);
+            this.ClientSize = new System.Drawing.Size(1056, 739);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -565,19 +543,13 @@
         private System.Windows.Forms.ToolStripMenuItem symbologyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hiraganaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toKatakanaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fromKatakanaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toRomajiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fromRomajiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem katakanaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toHiraganaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fromHiraganaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toRomajiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem fromRomajiToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem romajiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toHiraganaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem fromHiraganaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toKatakanaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem fromKatakanaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem fontsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectionWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem randomizeToolStripMenuItem;
@@ -592,6 +564,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

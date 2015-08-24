@@ -8,6 +8,8 @@ namespace WindowsFormsApplication1
 {
     class FlashCardTester
     {
-
+        public static void SymbologyArray()
+        {
+        }
     }
 }

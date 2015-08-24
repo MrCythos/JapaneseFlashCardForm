@@ -12,19 +12,23 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+        List<string[]> JCSVList = Program.JapaneseSymbologyValues(); //outisde public form so that the list is accessible to all methods in form1
+
         public Form1()
         {
             InitializeComponent();
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            //MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             //MinimizeBox = false;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow; //this prevents the window from being resized, min/max-imized
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow; //this prevents the window from being resized, min/max-imized
             //checkBox1.Text = "Vowel Base"; //just how to manually rename stuff
             button3.Enabled = false; //prevents the image of the chart from being clicked
 
-            checkBoxLine = new CheckBox[] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10, checkBox11};
+            //checkboxline is an array for the lines and checkboxbase is an array for the bases
+            checkBoxLine = new CheckBox[] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10, checkBox11}; //organizes checkboxes
             checkBoxBase = new CheckBox[] { checkBox12, checkBox13, checkBox14, checkBox15, checkBox16 };
 
+            textBox1.Hide(); //hides textbox 
         }
         CheckBox[] checkBoxLine; //an array of line/columns of checkboxes of hiragana
         CheckBox[] checkBoxBase; //an array of base/rows of checkboxes of hiragana
@@ -66,16 +70,18 @@ namespace WindowsFormsApplication1
 
         private void creditsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Howard Kim; Programmed in C# using Windows Forms Application", "Credits");
+            MessageBox.Show("Howard Kim /u/Cythos; Programmed in C# using Windows Forms Application. Default testing parameters set to Hiragana to Romaji.", "Credits");
         }
 
-        private void button1_Click_1(object sender, EventArgs e) //test button
+        private void button1_Click_1(object sender, EventArgs e) //test-start button
         {
+            //this.WindowState = System.Windows.Forms.FormWindowState.Minimized; //minimizes form when pressed
+            Form1.ActiveForm.Hide();
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-
+            
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -127,6 +133,313 @@ namespace WindowsFormsApplication1
             {
                 checkBoxLine[i].CheckState = CheckState.Checked;
             }
-        } 
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            int j = 0; //starting point for replaceboolvalue method
+
+            for (int i = 0; i < 5; i++) 
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked) //check the checkboxbase rows to see if they're unchecked, if so proceed.
+                {
+                    Program.ReplaceBoolValue(JCSVList, j); //
+                }
+                else
+                {
+                }
+                j++;
+            }
+        }
+
+        private void checkBox12_CheckedChanged(object sender, EventArgs e)
+        {
+            ////Console.WriteLine("\n");
+            //for (int i = 0; i < JCSVList.Count-1; i+=5)
+            //{
+            //    Program.ReplaceBoolValue(JCSVList, i);
+            //}
+            int j = 0; //starting point for replaceboolvalue method
+            
+            for (int i = 0; i < 10; i++) //using 10 because the 11th box is for the "n" character which can be ignored
+            {
+                if (checkBoxLine[i].CheckState == CheckState.Unchecked) //check if the state of the checkboxes of "line" are checked
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j += 5; //increment by 5 so that we mark only the base symbols
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            int j = 5;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j++;
+            }
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            int j = 10;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j++;
+            }
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            int j = 15;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j++;
+            }
+
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            int j = 20;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j++;
+            }
+
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            int j = 25;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j++;
+            }
+
+        }
+
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            int j = 30;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j++;
+            }
+
+        }
+
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            int j = 35;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j++;
+            }
+
+        }
+
+        private void checkBox9_CheckedChanged(object sender, EventArgs e)
+        {
+            int j = 40;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j++;
+            }
+
+        }
+
+        private void checkBox10_CheckedChanged(object sender, EventArgs e)
+        {
+            int j = 45;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j++;
+            }
+        }
+
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {
+            int j = 50;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (checkBoxBase[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+            }
+        }
+
+        private void checkBox13_CheckedChanged(object sender, EventArgs e)
+        {
+            //for (int i = 1; i < JCSVList.Count - 1; i += 5)
+            //{
+            //    Program.ReplaceBoolValue(JCSVList, i);
+            //}
+            int j = 1;
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (checkBoxLine[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j += 5;
+            }
+
+        }
+
+        private void checkBox14_CheckedChanged(object sender, EventArgs e)
+        {
+            //for (int i = 2; i < JCSVList.Count - 1; i += 5)
+            //{
+            //    Program.ReplaceBoolValue(JCSVList, i);
+            //}
+            int j = 2;
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (checkBoxLine[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j += 5;
+            }
+
+        }
+
+        private void checkBox15_CheckedChanged(object sender, EventArgs e)
+        {
+            //for (int i = 3; i < JCSVList.Count - 1; i += 5)
+            //{
+            //    Program.ReplaceBoolValue(JCSVList, i);
+            //}
+            int j = 3;
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (checkBoxLine[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j += 5;
+            }
+
+        }
+
+        private void checkBox16_CheckedChanged(object sender, EventArgs e)
+        {
+            //for (int i = 4; i < JCSVList.Count - 1; i += 5)
+            //{
+            //    Program.ReplaceBoolValue(JCSVList, i);
+            //}
+            int j = 4;
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (checkBoxLine[i].CheckState == CheckState.Unchecked)
+                {
+                    Program.ReplaceBoolValue(JCSVList, j);
+                }
+                else
+                {
+                }
+                j += 5;
+            }
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
