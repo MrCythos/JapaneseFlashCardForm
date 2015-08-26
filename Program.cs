@@ -23,9 +23,13 @@ namespace WindowsFormsApplication1
         public static List<string[]> JapaneseSymbologyValues() //this will read the csv file and convert that into a list/array 3x47 and return it
         {
             string jStreamContents = "";
+            //string JCSVFile = "";
+            string JSBFileDirectory = Directory.GetCurrentDirectory();
+            string JSBFile = Path.Combine(JSBFileDirectory, "Japanese Symbology Bool.csv");
+            Console.WriteLine(JSBFile);
 
             //reads the contents of the csv file and converts it into a string "jstreamcontents"
-            using (StreamReader oStreamReader = new StreamReader(File.OpenRead("C:\\Users\\Howard Kim\\Documents\\Visual Studio 2013\\Projects\\JapaneseFlashCardForm\\Resources\\Japanese Symbology Bool.csv")))
+            using (StreamReader oStreamReader = new StreamReader(JSBFile))
             {
                 jStreamContents = oStreamReader.ReadToEnd();
             }

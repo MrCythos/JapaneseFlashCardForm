@@ -1,0 +1,51 @@
+﻿あ,ア,A,false
+い,イ,I,false
+う,ウ,U,false
+え,エ,E,false
+お,オ,O,false
+か,カ,KA,false
+き,キ,KI,false
+く,ク,KU,false
+け,ケ,KE,false
+こ,コ,KO,false
+さ,サ,SA,false
+し,シ,SHI,false
+す,ス,SU,false
+せ,セ,SE,false
+そ,ソ,SO,false
+た,タ,TA,false
+ち,チ,CHI,false
+つ,ツ,TSU,false
+て,テ,TE,false
+と,ト,TO,false
+な,ナ,NA,false
+に,ニ,NI,false
+ぬ,ヌ,NU,false
+ね,ネ,NE,false
+の,ノ,NO,false
+は,ナ,HA,false
+ひ,ニ,HI,false
+ふ,ヌ,FU,false
+へ,ネ,HE,false
+ほ,ノ,HO,false
+ま,マ,MA,false
+み,ミ,MI,false
+む,ム,MU,false
+め,メ,ME,false
+も,モ,MO,false
+や,ヤ,YA,false
+ , , ,false
+ゆ,ユ,YU,false
+ , , ,false
+よ,ヨ,YO,false
+ら,ラ,RA,false
+り,リ,RI,false
+る,ル,RU,false
+れ,レ,RE,false
+ろ,ロ,RO,false
+わ,ワ,WA,false
+ , , ,false
+ , , ,false
+ , , ,false
+を,ヲ,WO,false
+ん, ,N,false

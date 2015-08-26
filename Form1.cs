@@ -76,7 +76,7 @@ namespace WindowsFormsApplication1
         private void button1_Click_1(object sender, EventArgs e) //test-start button
         {
             //this.WindowState = System.Windows.Forms.FormWindowState.Minimized; //minimizes form when pressed
-            Form1.ActiveForm.Hide();
+            //Form1.ActiveForm.Hide();
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -438,6 +438,13 @@ namespace WindowsFormsApplication1
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+    public partial class SubForm : Form //testing form
+    {
+        public SubForm()
         {
 
         }
