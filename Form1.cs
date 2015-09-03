@@ -13,6 +13,9 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         List<string[]> JCSVList = Program.JapaneseSymbologyValues(); //outisde public form so that the list is accessible to all methods in form1
+        List<string[]> JSCVTest; //list for values to be tested
+        int toColumn = 0; //column in jSCVList to take answers testing
+        int fromColumn = 0; //column in JSCVList to take from testing
 
         public Form1()
         {
@@ -29,6 +32,7 @@ namespace WindowsFormsApplication1
             checkBoxBase = new CheckBox[] { checkBox12, checkBox13, checkBox14, checkBox15, checkBox16 };
 
             textBox1.Hide(); //hides textbox 
+
         }
         CheckBox[] checkBoxLine; //an array of line/columns of checkboxes of hiragana
         CheckBox[] checkBoxBase; //an array of base/rows of checkboxes of hiragana
@@ -77,6 +81,9 @@ namespace WindowsFormsApplication1
         {
             //this.WindowState = System.Windows.Forms.FormWindowState.Minimized; //minimizes form when pressed
             //Form1.ActiveForm.Hide();
+            JSCVTest = FlashCardTester.JSCReturn(JCSVList);
+            FlashCardTester.CardQuizzer("Hiragana to Romaji",FlashCardTester.JTestValue(JSCVTest,toColumn));
+
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -113,7 +120,7 @@ namespace WindowsFormsApplication1
             {
                 checkBoxLine[i].CheckState = CheckState.Checked;
             }
-            for (int i = 0; i <checkBoxBase.Length; i++)
+            for (int i = 0; i < checkBoxBase.Length; i++)
             {
                 checkBoxBase[i].CheckState = CheckState.Checked;
             }
@@ -441,10 +448,8 @@ namespace WindowsFormsApplication1
         {
 
         }
-    }
-    public partial class SubForm : Form //testing form
-    {
-        public SubForm()
+
+        private void fileSystemWatcher1_Changed(object sender, System.IO.FileSystemEventArgs e)
         {
 
         }

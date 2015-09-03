@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.IO;
 
 namespace WindowsFormsApplication1
-{
+{ 
     static class Program
     {
         /// <summary>
@@ -26,8 +26,8 @@ namespace WindowsFormsApplication1
             //string JCSVFile = "";
             string JSBFileDirectory = Directory.GetCurrentDirectory();
             string JSBFile = Path.Combine(JSBFileDirectory, "Japanese Symbology Bool.csv");
-            Console.WriteLine(JSBFile);
-
+            //Console.WriteLine(JSBFile);
+    
             //reads the contents of the csv file and converts it into a string "jstreamcontents"
             using (StreamReader oStreamReader = new StreamReader(JSBFile))
             {
@@ -42,16 +42,6 @@ namespace WindowsFormsApplication1
             {
                 oJCsvList.Add(sFileline.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries));
             }
-
-            //int iColumnNumber = 0;
-            //int iRowNumber = 0;
-
-            //Console.WriteLine("Column{0}, row {1} = \"{2}\"", iColumnNumber, iRowNumber, oJCsvList[iColumnNumber][iRowNumber]);
-
-            //iColumnNumber = 3;
-            //iColumnNumber = 2;
-
-            //Console.WriteLine("Column{0}, row {1} = \"{2}\"", iColumnNumber, iRowNumber, oJCsvList[iColumnNumber][iRowNumber]);
 
             //returns the list to the method
             return oJCsvList;
