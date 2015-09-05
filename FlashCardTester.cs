@@ -17,12 +17,12 @@ namespace WindowsFormsApplication1
             prompt.FormBorderStyle = FormBorderStyle.FixedDialog;
             prompt.Text = caption;
             prompt.StartPosition = FormStartPosition.CenterScreen;
-            Label textLabel = new Label() { Left = 50, Top = 20, Text = text };
+            Label textLabel = new Label() { Left = 50, Top = 20, Text = text, Font = new System.Drawing.Font("Microsoft Sans Serif", 100f), AutoSize = true};
             TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 400 };
-            Button confirmation = new Button() { Text = "Confirm", Left = 300, Width = 100, Top = 70, DialogResult = DialogResult.OK };
-            Button denial = new Button() { Text = "Update", Left = 200, Width = 100, Top = 70};
+            Button confirmation = new Button() { Text = "Confirm", Left = 370, Width = 100, Top = 425, DialogResult = DialogResult.OK };
+            Button denial = new Button() { Text = "Update", Left = 370, Width = 100, Top = 400};
             confirmation.Click += (sender, e) => { prompt.Close(); };
-            denial.Click += (sender, e) => { prompt.Refresh(); }; //maybe refreshes form, build method to [.Refresh() or .Update()]
+            denial.Click += (sender, e) => { prompt.Update(); }; //maybe refreshes form, build method to [.Refresh() or .Update()]
             //prompt.Controls.Add(textBox);
             prompt.Controls.Add(confirmation);
             prompt.Controls.Add(denial);

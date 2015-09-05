@@ -69,5 +69,19 @@ namespace WindowsFormsApplication1
             }
             else Console.WriteLine("Error in replacement");
         }
+        public static bool InitiateJTest(List<string[]> testList)
+        {
+            bool validVar;
+
+            //if (testList[0][3] == "true")
+            //{
+            //    validVar = true;
+            //}
+            //else validVar = false;
+
+            foreach (var item in testList)
+
+            return validVar;
+        }
     }
 }

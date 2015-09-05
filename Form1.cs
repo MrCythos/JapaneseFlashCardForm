@@ -81,8 +81,15 @@ namespace WindowsFormsApplication1
         {
             //this.WindowState = System.Windows.Forms.FormWindowState.Minimized; //minimizes form when pressed
             //Form1.ActiveForm.Hide();
-            JSCVTest = FlashCardTester.JSCReturn(JCSVList);
-            FlashCardTester.CardQuizzer("Hiragana to Romaji",FlashCardTester.JTestValue(JSCVTest,toColumn));
+            //if (Program.InitiateJTest(JSCVTest) == true)
+            //{
+            //    JSCVTest = FlashCardTester.JSCReturn(JCSVList);
+            //    FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest, toColumn));
+            //}
+            //else
+            //{
+            //    MessageBox.Show("You have nothing selected", "Testing Error");
+            //}
 
         }
 
