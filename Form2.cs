@@ -15,11 +15,17 @@ namespace WindowsFormsApplication1
         public Form2()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
             Button confirmation = new Button() { Text = "Confirm", Left = 370, Width = 100, Top = 425, DialogResult = DialogResult.OK };
             Button denial = new Button() { Text = "Update", Left = 370, Width = 100, Top = 400};
             confirmation.Click += (sender, e) => { prompt.Close(); };
-            denial.Click += (sender, e) => { prompt.Update(); }; //maybe refreshes form, build method to [.Refresh() or .Update()]
+            denial.Click += (sender, e) => { prompt.Refresh(); }; //maybe refreshes form, build method to [.Refresh() or .Update()]
             //prompt.Controls.Add(textBox);
             prompt.Controls.Add(confirmation);
             prompt.Controls.Add(denial);
@@ -41,11 +41,7 @@ namespace WindowsFormsApplication1
                 jSCBool = bool.Parse(jSCsvCheck[i][3]); //parses and assigns the string to a new variable
                 if (jSCBool == true) //if that jSCBool is true then the row will be added to the new list
                 {
-                    testingList.AddRange(jSCsvCheck.ToArray());
-                }
-                else
-                {
-                    //nothing
+                    testingList.Add(jSCsvCheck[i]);
                 }
             }
 
@@ -69,11 +65,13 @@ namespace WindowsFormsApplication1
                 {
                     jVal++;
                 }
-                else break;
+                
             }
-
+            jVal -= 1;
             testValue = rnd.Next(startingValue, jVal);
             Console.WriteLine(testValue); //testing
+            Console.WriteLine(jVal);
+            Console.WriteLine();
             returnTestValue = jSCsvTrue[testValue][toVal];
 
             return returnTestValue;

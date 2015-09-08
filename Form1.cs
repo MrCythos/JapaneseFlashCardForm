@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
         List<string[]> JSCVTest; //list for values to be tested
         int toColumn = 0; //column in jSCVList to take answers testing
         int fromColumn = 0; //column in JSCVList to take from testing
+        Form2 TestingForm = new Form2();
 
         public Form1()
         {
@@ -31,7 +32,7 @@ namespace WindowsFormsApplication1
             checkBoxLine = new CheckBox[] { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10, checkBox11}; //organizes checkboxes
             checkBoxBase = new CheckBox[] { checkBox12, checkBox13, checkBox14, checkBox15, checkBox16 };
 
-            textBox1.Hide(); //hides textbox 
+            textBox1.Hide(); //hides textbox //note: why did i put a textbox here?
 
         }
         CheckBox[] checkBoxLine; //an array of line/columns of checkboxes of hiragana
@@ -80,17 +81,17 @@ namespace WindowsFormsApplication1
         private void button1_Click_1(object sender, EventArgs e) //test-start button
         {
             //this.WindowState = System.Windows.Forms.FormWindowState.Minimized; //minimizes form when pressed
-            //Form1.ActiveForm.Hide();
-            //if (Program.InitiateJTest(JSCVTest) == true)
-            //{
-            //    JSCVTest = FlashCardTester.JSCReturn(JCSVList);
-            //    FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest, toColumn));
-            //}
-            //else
-            //{
-            //    MessageBox.Show("You have nothing selected", "Testing Error");
-            //}
-
+            //Form1.ActiveForm.Hide;
+            JSCVTest = FlashCardTester.JSCReturn(JCSVList); //creates a list to be tested
+            try
+            {   //test list isn't correctly being passed into jtestvalue method
+                Console.WriteLine(JSCVTest[3][0]);
+                FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest, toColumn));
+            }
+            catch
+            {
+                MessageBox.Show("You have nothing selected", "Testing Error");
+            }
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
