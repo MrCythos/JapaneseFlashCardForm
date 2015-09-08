@@ -35,3 +35,4 @@ C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsForm
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\bin\Debug\WindowsFormsApplication1.exe
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Howard\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.Form2.resources

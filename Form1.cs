@@ -83,10 +83,10 @@ namespace WindowsFormsApplication1
             //this.WindowState = System.Windows.Forms.FormWindowState.Minimized; //minimizes form when pressed
             //Form1.ActiveForm.Hide;
             JSCVTest = FlashCardTester.JSCReturn(JCSVList); //creates a list to be tested
+            //FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest, toColumn), JSCVTest, toColumn);
             try
             {   //test list isn't correctly being passed into jtestvalue method
-                Console.WriteLine(JSCVTest[3][0]);
-                FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest, toColumn));
+                FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest, toColumn), JSCVTest, toColumn);
             }
             catch
             {
