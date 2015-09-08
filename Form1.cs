@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
         List<string[]> JCSVList = Program.JapaneseSymbologyValues(); //outisde public form so that the list is accessible to all methods in form1
         List<string[]> JSCVTest; //list for values to be tested
         int toColumn = 0; //column in jSCVList to take answers testing
-        int fromColumn = 0; //column in JSCVList to take from testing
+        int fromColumn = 2; //column in JSCVList to take from testing
         Form2 TestingForm = new Form2();
 
         public Form1()
@@ -86,7 +86,7 @@ namespace WindowsFormsApplication1
             //FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest, toColumn), JSCVTest, toColumn);
             try
             {   //test list isn't correctly being passed into jtestvalue method
-                FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest, toColumn), JSCVTest, toColumn);
+                FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest)[0][toColumn], JSCVTest, toColumn, fromColumn);
             }
             catch
             {
@@ -460,6 +460,18 @@ namespace WindowsFormsApplication1
         private void fileSystemWatcher1_Changed(object sender, System.IO.FileSystemEventArgs e)
         {
 
+        }
+
+        private void toHiraganaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            toColumn = 0;
+            fromColumn = 2;
+        }
+
+        private void toKatakanaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            toColumn = 1;
+            fromColumn = 2;
         }
     }
 }

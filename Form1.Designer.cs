@@ -300,19 +300,19 @@
             this.toKatakanaToolStripMenuItem,
             this.toRomajiToolStripMenuItem});
             this.hiraganaToolStripMenuItem.Name = "hiraganaToolStripMenuItem";
-            this.hiraganaToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.hiraganaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.hiraganaToolStripMenuItem.Text = "HIragana";
             // 
             // toKatakanaToolStripMenuItem
             // 
             this.toKatakanaToolStripMenuItem.Name = "toKatakanaToolStripMenuItem";
-            this.toKatakanaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.toKatakanaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toKatakanaToolStripMenuItem.Text = "to Katakana";
             // 
             // toRomajiToolStripMenuItem
             // 
             this.toRomajiToolStripMenuItem.Name = "toRomajiToolStripMenuItem";
-            this.toRomajiToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.toRomajiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toRomajiToolStripMenuItem.Text = "to Romaji";
             // 
             // katakanaToolStripMenuItem
@@ -321,7 +321,7 @@
             this.toHiraganaToolStripMenuItem,
             this.toRomajiToolStripMenuItem1});
             this.katakanaToolStripMenuItem.Name = "katakanaToolStripMenuItem";
-            this.katakanaToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.katakanaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.katakanaToolStripMenuItem.Text = "Katakana";
             // 
             // toHiraganaToolStripMenuItem
@@ -342,20 +342,22 @@
             this.toHiraganaToolStripMenuItem1,
             this.toKatakanaToolStripMenuItem1});
             this.romajiToolStripMenuItem.Name = "romajiToolStripMenuItem";
-            this.romajiToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.romajiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.romajiToolStripMenuItem.Text = "Romaji";
             // 
             // toHiraganaToolStripMenuItem1
             // 
             this.toHiraganaToolStripMenuItem1.Name = "toHiraganaToolStripMenuItem1";
-            this.toHiraganaToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.toHiraganaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toHiraganaToolStripMenuItem1.Text = "to Hiragana";
+            this.toHiraganaToolStripMenuItem1.Click += new System.EventHandler(this.toHiraganaToolStripMenuItem1_Click);
             // 
             // toKatakanaToolStripMenuItem1
             // 
             this.toKatakanaToolStripMenuItem1.Name = "toKatakanaToolStripMenuItem1";
-            this.toKatakanaToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.toKatakanaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toKatakanaToolStripMenuItem1.Text = "to Katakana";
+            this.toKatakanaToolStripMenuItem1.Click += new System.EventHandler(this.toKatakanaToolStripMenuItem1_Click);
             // 
             // fontsToolStripMenuItem
             // 

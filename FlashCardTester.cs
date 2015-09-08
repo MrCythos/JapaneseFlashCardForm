@@ -9,32 +9,75 @@ namespace WindowsFormsApplication1
 {
     class FlashCardTester
     {
-        public static void CardQuizzer(string caption, string text, List<string[]> testList, int toVal) //https://stackoverflow.com/questions/5427020/prompt-dialog-in-windows-forms
+        public static void CardQuizzer(string caption, string text, List<string[]> testList, int toVal, int fromVal) //https://stackoverflow.com/questions/5427020/prompt-dialog-in-windows-forms
         {
             Form prompt = new Form();
+
             prompt.Width = 500;
             prompt.Height = 500;
             prompt.FormBorderStyle = FormBorderStyle.FixedDialog;
             prompt.Text = caption;
             prompt.StartPosition = FormStartPosition.CenterScreen;
+
             string testText = text;
-            Label textLabel = new Label() { Left = 50, Top = 20, Text = testText, Font = new System.Drawing.Font("Microsoft Sans Serif", 100f), AutoSize = true};
+            int buttonLeft = 350;
+            int buttonWidth = 100;
+            List<string[]> answerList = new List<string[]>();
+            
+            Label textLabel = new Label() { Left = 80, Top = 75, Text = testText, Font = new System.Drawing.Font("Microsoft Sans Serif", 150f), AutoSize = true};
             TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 400 };
             Button confirmation = new Button() { Text = "Confirm", Left = 370, Width = 100, Top = 425, DialogResult = DialogResult.OK };
-            Button denial = new Button() { Text = "Update", Left = 370, Width = 100, Top = 400};
-            confirmation.Click += (sender, e) => { prompt.Close(); };
-            denial.Click += (sender, e) => 
+            Button denial = new Button() { Text = "Skip", Left = 370, Width = 100, Top = 400};
+            Button button1 = new Button() { Text = "1", Left = buttonLeft, Width = buttonWidth, Top = 60, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
+            Button button2 = new Button() { Text = "2", Left = buttonLeft, Width = buttonWidth, Top = 135, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
+            Button button3 = new Button() { Text = "3", Left = buttonLeft, Width = buttonWidth, Top = 210, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
+            Button button4 = new Button() { Text = "4", Left = buttonLeft, Width = buttonWidth, Top = 285, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
+
+            Button[] buttonArray = new Button[] { button1, button2, button3, button4 };
+            Random randomButton = new Random();
+            int answerButton = 0;
+
+
+            //buttonArray[0].Text = "Hello";
+            
+            confirmation.Click += (sender, e) => 
+            { 
+                prompt.Close(); 
+            };
+            denial.Click += (sender, e) =>
             {
+                answerButton = randomButton.Next(0, 4);
+                answerList = JTestValue(testList);
+                buttonArray[answerButton].Text = answerList[0][fromVal];
+
+                for (int i = 0; i < 4; i++)
+                {
+                    if (i != answerButton)
+                    {
+                        buttonArray[i].Text = JTestValue(testList)[0][fromVal];
+                    }
+                    else
+                    {
+
+                    }
+                }
+
                 prompt.Controls.Remove(textLabel);
-                testText = JTestValue(testList, toVal);
+                testText = answerList[toVal][0];
                 textLabel.Text = testText;
                 prompt.Controls.Add(textLabel);
             }; //refreshes form to show new character
+
             //prompt.Controls.Add(textBox);
             prompt.Controls.Add(confirmation);
             prompt.Controls.Add(denial);
             prompt.Controls.Add(textLabel);
             //prompt.AcceptButton = confirmation;
+
+            for (int i = 0; i < 4; i++)
+            {
+            prompt.Controls.Add(buttonArray[i]);
+            }
 
             prompt.ShowDialog();
         }
@@ -42,26 +85,36 @@ namespace WindowsFormsApplication1
         {
             List<string[]> jSCsvCheck = jSCsv; //the old list
             List<string[]> testingList = new List<string[]>(); //the testing/true list
+            int listLength = 0;
+
             for (int i = 0; i < 50; i++) //for loop will loop through all the values in the 4th column
             {
                 bool jSCBool;
                 jSCBool = bool.Parse(jSCsvCheck[i][3]); //parses and assigns the string to a new variable
-                if (jSCBool == true) //if that jSCBool is true then the row will be added to the new list
+                string emptyCheck = jSCsvCheck[i][0];
+                if (jSCBool == true && emptyCheck != "") //if that jSCBool is true then the row will be added to the new list
                 {
                     testingList.Add(jSCsvCheck[i]);
+                    listLength++;
                 }
             }
-
+            //for (int i = 0; i < listLength; i++)
+            //{
+            //    if (testingList[i][0] == "")
+            //    {
+            //        testingList.Remove(testingList[i]);
+            //    }
+            //}
             return testingList; //return testing list which contains values for testings
         }
-        public static string JTestValue (List<string[]> jSCsvTrue, int toVal) //toVal is the "question" being asked
+        public static List<string[]> JTestValue(List<string[]> jSCsvTrue) //toVal is the "question" being asked
         {
             List<string[]> jList = jSCsvTrue;
             int startingValue = 0;
             int jVal = 0;
             Random rnd = new Random();
             int testValue;
-            string returnTestValue;
+            List<string[]> returnTestValue = new List<string[]>();
 
             for (int i = 0; i < 50; i++)
             {
@@ -73,7 +126,7 @@ namespace WindowsFormsApplication1
                 }
                 catch
                 {
-                    Console.WriteLine("JTestValue parsed to end of test list. "+ Environment.NewLine + "Count is finished.");
+                    Console.WriteLine("FlashCardTester.JTestValue() parsed to end of test list. "+ Environment.NewLine + "Count is finished.");
                     break;
                 }
                 if (test == true)
@@ -87,8 +140,8 @@ namespace WindowsFormsApplication1
             Console.WriteLine(testValue); //testing
             Console.WriteLine(jVal);
             Console.WriteLine();
-            returnTestValue = jSCsvTrue[testValue][toVal];
-
+            returnTestValue.Add(jSCsvTrue[testValue]);
+            
             return returnTestValue;
         }
     }
