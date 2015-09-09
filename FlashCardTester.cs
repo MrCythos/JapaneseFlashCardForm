@@ -52,8 +52,16 @@ namespace WindowsFormsApplication1
 
                 for (int i = 0; i < 4; i++)
                 {
+                    Button[] tempButtonArray = new Button[]{buttonArray[i]};
+                    Button tempButton = buttonArray[i];
                     if (i != answerButton)
                     {
+                        Button[] tempList = buttonArray.SkipWhile(element => element = tempButton);//buttonArray.Except(tempButton);
+                        //buttonArray.SkipWhile(element => element == buttonArray[i]);
+                        while (buttonArray[i].Text != tempList[0].Text || buttonArray[i].Text != tempList[1].Text || buttonArray[i].Text != tempList[2].Text)
+                        {
+
+                        }
                         buttonArray[i].Text = JTestValue(testList)[0][fromVal];
                     }
                     else
