@@ -308,12 +308,14 @@
             this.toKatakanaToolStripMenuItem.Name = "toKatakanaToolStripMenuItem";
             this.toKatakanaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toKatakanaToolStripMenuItem.Text = "to Katakana";
+            this.toKatakanaToolStripMenuItem.Click += new System.EventHandler(this.toKatakanaToolStripMenuItem_Click);
             // 
             // toRomajiToolStripMenuItem
             // 
             this.toRomajiToolStripMenuItem.Name = "toRomajiToolStripMenuItem";
             this.toRomajiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toRomajiToolStripMenuItem.Text = "to Romaji";
+            this.toRomajiToolStripMenuItem.Click += new System.EventHandler(this.toRomajiToolStripMenuItem_Click);
             // 
             // katakanaToolStripMenuItem
             // 
@@ -323,18 +325,21 @@
             this.katakanaToolStripMenuItem.Name = "katakanaToolStripMenuItem";
             this.katakanaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.katakanaToolStripMenuItem.Text = "Katakana";
+            this.katakanaToolStripMenuItem.Click += new System.EventHandler(this.katakanaToolStripMenuItem_Click);
             // 
             // toHiraganaToolStripMenuItem
             // 
             this.toHiraganaToolStripMenuItem.Name = "toHiraganaToolStripMenuItem";
-            this.toHiraganaToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.toHiraganaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toHiraganaToolStripMenuItem.Text = "to Hiragana";
+            this.toHiraganaToolStripMenuItem.Click += new System.EventHandler(this.toHiraganaToolStripMenuItem_Click);
             // 
             // toRomajiToolStripMenuItem1
             // 
             this.toRomajiToolStripMenuItem1.Name = "toRomajiToolStripMenuItem1";
-            this.toRomajiToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.toRomajiToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toRomajiToolStripMenuItem1.Text = "to Romaji";
+            this.toRomajiToolStripMenuItem1.Click += new System.EventHandler(this.toRomajiToolStripMenuItem1_Click);
             // 
             // romajiToolStripMenuItem
             // 

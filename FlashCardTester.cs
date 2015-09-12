@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
 {
     class FlashCardTester
     {
-        public static void CardQuizzer(string caption, string text, List<string[]> testList, int toVal, int fromVal) //https://stackoverflow.com/questions/5427020/prompt-dialog-in-windows-forms
+        public static void CardQuizzer(string caption, List<string[]> testList, int toVal, int fromVal) //https://stackoverflow.com/questions/5427020/prompt-dialog-in-windows-forms
         {
             Form prompt = new Form();
 
@@ -19,68 +19,95 @@ namespace WindowsFormsApplication1
             prompt.Text = caption;
             prompt.StartPosition = FormStartPosition.CenterScreen;
 
-            string testText = text;
-            int buttonLeft = 350;
+            int buttonLeft = 50;
             int buttonWidth = 100;
+            int labelLeft = 175;
+            int labelTop = 80;
             List<string[]> answerList = new List<string[]>();
+            List<string[]> testingList = testList;
+            int answerToVal = toVal;
+            int questionFromVal = fromVal;
+            System.Drawing.Font startTextLabelFont= new System.Drawing.Font("Microsoft Sans Serif", 150f);
             
-            Label textLabel = new Label() { Left = 80, Top = 75, Text = testText, Font = new System.Drawing.Font("Microsoft Sans Serif", 150f), AutoSize = true};
-            TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 400 };
-            Button confirmation = new Button() { Text = "Confirm", Left = 370, Width = 100, Top = 425, DialogResult = DialogResult.OK };
-            Button denial = new Button() { Text = "Skip", Left = 370, Width = 100, Top = 400};
-            Button button1 = new Button() { Text = "1", Left = buttonLeft, Width = buttonWidth, Top = 60, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
-            Button button2 = new Button() { Text = "2", Left = buttonLeft, Width = buttonWidth, Top = 135, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
-            Button button3 = new Button() { Text = "3", Left = buttonLeft, Width = buttonWidth, Top = 210, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
-            Button button4 = new Button() { Text = "4", Left = buttonLeft, Width = buttonWidth, Top = 285, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
+            Label textLabel = new Label() { Left = 200, Top = 150, Text = "Ready?", Font = new System.Drawing.Font("Microsoft Sans Serif", 40f), AutoSize = true};
+            Label returnLabel = new Label() { Left = 50, Top = 400, Text = "" };
+            //TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 400 };
+            Button confirmation = new Button() { Text = "End Test", Left = 370, Width = 100, Top = 425, DialogResult = DialogResult.OK };
+            Button denial = new Button() { Text = "Start Test", Left = 370, Width = 100, Top = 400};
+            Button button1 = new Button() { Text = "?", Left = buttonLeft, Width = buttonWidth, Top = 60, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
+            Button button2 = new Button() { Text = "?", Left = buttonLeft, Width = buttonWidth, Top = 135, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
+            Button button3 = new Button() { Text = "?", Left = buttonLeft, Width = buttonWidth, Top = 210, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
+            Button button4 = new Button() { Text = "?", Left = buttonLeft, Width = buttonWidth, Top = 285, Font = new System.Drawing.Font("Microsoft Sans Serif", 25f), Size = new System.Drawing.Size(100, 50) };
 
             Button[] buttonArray = new Button[] { button1, button2, button3, button4 };
-            Random randomButton = new Random();
-            int answerButton = 0;
-
-
-            //buttonArray[0].Text = "Hello";
+            Random randomValue = new Random();
             
             confirmation.Click += (sender, e) => 
-            { 
+            {
                 prompt.Close(); 
             };
+
             denial.Click += (sender, e) =>
             {
-                answerButton = randomButton.Next(0, 4);
-                answerList = JTestValue(testList);
-                buttonArray[answerButton].Text = answerList[0][fromVal];
+                int answerButton = randomValue.Next(0, 4);
 
-                for (int i = 0; i < 4; i++)
-                {
-                    Button[] tempButtonArray = new Button[]{buttonArray[i]};
-                    Button tempButton = buttonArray[i];
-                    if (i != answerButton)
-                    {
-                        Button[] tempList = buttonArray.SkipWhile(element => element = tempButton);//buttonArray.Except(tempButton);
-                        //buttonArray.SkipWhile(element => element == buttonArray[i]);
-                        while (buttonArray[i].Text != tempList[0].Text || buttonArray[i].Text != tempList[1].Text || buttonArray[i].Text != tempList[2].Text)
-                        {
+                LabelConfig(textLabel, labelTop, labelLeft, startTextLabelFont);
+                answerList = ClickGenerate(denial, buttonArray, answerList, testList, answerButton, randomValue, fromVal);
+                ButtonIterator(buttonArray, answerList, testList, answerButton, randomValue, fromVal);
+                ClickRefresh(prompt, textLabel, answerList, toVal);
+            };
 
-                        }
-                        buttonArray[i].Text = JTestValue(testList)[0][fromVal];
-                    }
-                    else
-                    {
+            button1.Click += (sender, e) =>
+            {
+                int answerButton = randomValue.Next(0, 4);
 
-                    }
-                }
+                ClickTest(button1, answerList, returnLabel, fromVal);
 
-                prompt.Controls.Remove(textLabel);
-                testText = answerList[toVal][0];
-                textLabel.Text = testText;
-                prompt.Controls.Add(textLabel);
-            }; //refreshes form to show new character
+                LabelConfig(textLabel, labelTop, labelLeft, startTextLabelFont);
+                answerList = ClickGenerate(denial, buttonArray, answerList, testList, answerButton, randomValue, fromVal);
+                ButtonIterator(buttonArray, answerList, testList, answerButton, randomValue, fromVal);
+                ClickRefresh(prompt, textLabel, answerList, toVal);
+            };
+            button2.Click += (sender, e) =>
+            {
+                int answerButton = randomValue.Next(0, 4);
+
+                ClickTest(button2, answerList, returnLabel, fromVal);
+
+                LabelConfig(textLabel, labelTop, labelLeft, startTextLabelFont);
+                answerList = ClickGenerate(denial, buttonArray, answerList, testList, answerButton, randomValue, fromVal);
+                ButtonIterator(buttonArray, answerList, testList, answerButton, randomValue, fromVal);
+                ClickRefresh(prompt, textLabel, answerList, toVal);
+            };
+            button3.Click += (sender, e) =>
+            {
+                int answerButton = randomValue.Next(0, 4);
+
+                ClickTest(button3, answerList, returnLabel, fromVal);
+
+                LabelConfig(textLabel, labelTop, labelLeft, startTextLabelFont);
+                answerList = ClickGenerate(denial, buttonArray, answerList, testList, answerButton, randomValue, fromVal);
+                ButtonIterator(buttonArray, answerList, testList, answerButton, randomValue, fromVal);
+                ClickRefresh(prompt, textLabel, answerList, toVal);
+            };
+            button4.Click += (sender, e) =>
+            {
+                int answerButton = randomValue.Next(0, 4);
+
+                ClickTest(button4, answerList, returnLabel, fromVal);
+
+                LabelConfig(textLabel, labelTop, labelLeft, startTextLabelFont);
+                answerList = ClickGenerate(denial, buttonArray, answerList, testList, answerButton, randomValue, fromVal);
+                ButtonIterator(buttonArray, answerList, testList, answerButton, randomValue, fromVal);
+                ClickRefresh(prompt, textLabel, answerList, toVal);
+            };
 
             //prompt.Controls.Add(textBox);
             prompt.Controls.Add(confirmation);
             prompt.Controls.Add(denial);
             prompt.Controls.Add(textLabel);
             //prompt.AcceptButton = confirmation;
+            prompt.Controls.Add(returnLabel);
 
             for (int i = 0; i < 4; i++)
             {
@@ -106,13 +133,7 @@ namespace WindowsFormsApplication1
                     listLength++;
                 }
             }
-            //for (int i = 0; i < listLength; i++)
-            //{
-            //    if (testingList[i][0] == "")
-            //    {
-            //        testingList.Remove(testingList[i]);
-            //    }
-            //}
+
             return testingList; //return testing list which contains values for testings
         }
         public static List<string[]> JTestValue(List<string[]> jSCsvTrue) //toVal is the "question" being asked
@@ -134,7 +155,7 @@ namespace WindowsFormsApplication1
                 }
                 catch
                 {
-                    Console.WriteLine("FlashCardTester.JTestValue() parsed to end of test list. "+ Environment.NewLine + "Count is finished.");
+                    Console.WriteLine("FlashCardTester.JTestValue() parsed to end of test list. "+ Environment.NewLine + "Ignore this message.");
                     break;
                 }
                 if (test == true)
@@ -143,14 +164,89 @@ namespace WindowsFormsApplication1
                 }
                 
             }
-            jVal -= 1;
+            //jVal -= 1;
             testValue = rnd.Next(startingValue, jVal);
-            Console.WriteLine(testValue); //testing
-            Console.WriteLine(jVal);
-            Console.WriteLine();
+            //Console.WriteLine(testValue); //testing
+            //Console.WriteLine(jVal);
             returnTestValue.Add(jSCsvTrue[testValue]);
             
             return returnTestValue;
+        }
+        private static void ButtonIterator (Button[] buttonArray, List<string[]> answerList, List<string[]> testList, int answerButton, Random randomValue, int fromVal)
+        {
+            IEnumerable<string[]> answerEnum = answerList;
+            List<string[]> questionList = testList.Except(answerEnum).ToList();
+
+            int sizeOfTest = questionList.Count;
+
+            foreach (Button value in buttonArray)
+                {
+                    int j = 0;
+
+                    if (value != buttonArray[answerButton])
+                    {
+                        int questionButton = randomValue.Next(0, sizeOfTest);
+                        value.Text = questionList[questionButton][fromVal];
+
+                        while (value.Text == buttonArray[answerButton].Text ) //|| value.Text == ""
+                        {
+                            value.Text = questionList[questionButton][fromVal];
+                        }
+                        for (int i = j; i < 0; i--)
+                        {
+                            if (i != j)
+                            {
+                                while (value.Text == buttonArray[i].Text)
+                                {
+                                    value.Text = questionList[questionButton][fromVal];
+                                }
+                            }
+                        }
+                        j++;
+                    }
+                    else
+                    {
+                    }
+                }
+        }
+        private static void LabelConfig (Label textLabel, int labelTop, int labelLeft, System.Drawing.Font Font)
+        {
+            textLabel.Top = labelTop;
+            textLabel.Left = labelLeft;
+            textLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 150f);
+        }
+        public static List<string[]> ClickGenerate(Button denial, Button[] buttonArray, List<string[]> answerList, List<string[]> testList, int answerButton, Random randomValue, int fromVal)
+        {
+            //int questionFromVal = fromVal++;
+            denial.Text = "Skip";
+            //answerButton = randomValue.Next(0, 4); //chooses a random button to be the 'answer' 0-4 since next ignores 4 and instead uses the range from 0-3
+            answerList = JTestValue(testList); //a single row from the testlist
+            buttonArray[answerButton].Text = answerList[0][fromVal];//assigns the hiragana/katakana/romaji to the text in the 'answer' button
+
+            return answerList;
+        }
+        private static void ClickRefresh(Form prompt, Label textLabel, List<string[]> answerList, int toVal)
+        {
+            string testText = "";
+            prompt.Controls.Remove(textLabel);
+            testText = answerList[0][toVal];
+            textLabel.Text = testText;
+            prompt.Controls.Add(textLabel);
+        }
+        private static void ClickTest(Button button1, List<string[]> answerList, Label returnLabel, int fromVal)
+        {
+            if (button1.Text == "?")
+            {
+
+            }
+            else if (button1.Text == answerList[0][fromVal])
+            {
+                returnLabel.Text = "That's correct!";
+            }
+            else
+            {
+                returnLabel.Text = "That's wrong...";
+            }
         }
     }
 }

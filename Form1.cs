@@ -16,7 +16,6 @@ namespace WindowsFormsApplication1
         List<string[]> JSCVTest; //list for values to be tested
         int toColumn = 0; //column in jSCVList to take answers testing
         int fromColumn = 2; //column in JSCVList to take from testing
-        Form2 TestingForm = new Form2();
 
         public Form1()
         {
@@ -83,10 +82,9 @@ namespace WindowsFormsApplication1
             //this.WindowState = System.Windows.Forms.FormWindowState.Minimized; //minimizes form when pressed
             //Form1.ActiveForm.Hide;
             JSCVTest = FlashCardTester.JSCReturn(JCSVList); //creates a list to be tested
-            //FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest, toColumn), JSCVTest, toColumn);
             try
             {   //test list isn't correctly being passed into jtestvalue method
-                FlashCardTester.CardQuizzer("Hiragana to Romaji", FlashCardTester.JTestValue(JSCVTest)[0][toColumn], JSCVTest, toColumn, fromColumn);
+                FlashCardTester.CardQuizzer("Hiragana to Romaji", JSCVTest, toColumn, fromColumn);
             }
             catch
             {
@@ -472,6 +470,35 @@ namespace WindowsFormsApplication1
         {
             toColumn = 1;
             fromColumn = 2;
+        }
+
+        private void katakanaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toHiraganaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toColumn = 0;
+            fromColumn = 1;
+        }
+
+        private void toRomajiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            toColumn = 2;
+            fromColumn = 1;
+        }
+
+        private void toKatakanaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toColumn = 1;
+            fromColumn = 0;
+        }
+
+        private void toRomajiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toColumn = 2;
+            fromColumn = 0;
         }
     }
 }

@@ -28,11 +28,10 @@ C:\Users\Howard\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApp
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.Form1.resources
-C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.Form2.resources
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\bin\Debug\WindowsFormsApplication1.exe
 C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\bin\Debug\WindowsFormsApplication1.pdb
 C:\Users\Howard\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.Form2.resources
+C:\Users\Howard Kim\Documents\GitHub\JapaneseFlashCardForm\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
